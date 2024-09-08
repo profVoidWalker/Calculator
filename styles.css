@@ -1,0 +1,73 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(to right, rgb(45, 52, 255), rgb(10, 176, 10));
+}
+
+#root {
+    border-radius: 0.4rem;
+    box-shadow: 0 0 0.6rem rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+}
+
+.calculator {
+    display: grid;
+    grid-template-columns: repeat(4, 5rem);
+    grid-template-rows: minmax(7rem, auto) repeat(5, 5rem);
+}
+
+.display {
+    grid-column: 1 / -1;
+    background-color: rgba(34, 34, 34, 0.75);
+    color: white;
+    font-size: 2.5rem;
+    /* text-align: right; */
+    padding: .75rem;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f0f0f0;
+    font-size: 2rem;
+    border: 1px solid #ddd;
+    cursor: pointer;
+    outline: none;
+}
+
+.button:focus,
+.button:hover {
+    background-color: #d0d0d0;
+}   
+
+.button.operator {
+    background-color: #ff9500;
+    color: white;
+}
+
+.button.operator:focus,
+.button.operator:hover {
+    background-color: #c87500;
+}   
+
+.button.zero {
+    grid-column: span 2;
+}
+
+.button:active {
+    background-color: #ccc;
+}
